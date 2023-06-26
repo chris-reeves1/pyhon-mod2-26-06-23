@@ -81,6 +81,7 @@
 #/ true division 10/3 = 3.3336
 #// floor division 10//3 = 3
 #% modulo 10%3 = 1
+#
 
 
 length = int(input("Enter the length of rectangle: "))
