@@ -151,8 +151,16 @@ print(books["the handmaiden's tale"])
 
 # make a dictionary of books, with 3 authors and multiple books per author. 
 # use an input() asking for an author name. 
-# print back as a string the list of books by the author.
+# print back as a string the list of books by that author.
 # Use the .join() method.
+
+books_dict = {"author1": ["book1", "book2"], "Author2": ["book3", "book4"]}
+
+y = input("enter author name: ")
+
+print(", ".join(books_dict[y]))
+
+
 
 
 
