@@ -83,3 +83,15 @@
 #% modulo 10%3 = 1
 
 
+length = int(input("Enter the length of rectangle: "))
+
+width = int(input("Enter the width of the rectangle: "))
+
+perimeter = 2 * (length + width)
+
+print("Perimeter:", perimeter)
+
+area = length * width
+
+print("Area:", area)
+
