@@ -106,7 +106,7 @@ else:
 
 # challenge:
 # weight converter app: convert a user inputted weight(float), and user
-# to select either kgs and lbs. write an if statemnet that checks 
+# to select either kgs and lbs. write an if statement that checks 
 # if the unit is kgs or lbs, if kgs convert into lbs and print the converted value.
 # else: to handle the other way around. Error handling for upper/lower case. 
 
