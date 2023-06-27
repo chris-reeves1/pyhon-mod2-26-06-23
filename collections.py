@@ -55,110 +55,136 @@
 
 # append
 
-my_fruits = ["apple", "orange", "kiwi"]
-my_fruits.append("pear")
-print(my_fruits)
+#my_fruits = ["apple", "orange", "kiwi"]
+#my_fruits.append("pear")
+#print(my_fruits)
 
 #remove
 
-my_fruits.remove("apple")
-print(my_fruits)
+#my_fruits.remove("apple")
+#print(my_fruits)
 
 # insert
 
-my_fruits.insert(0, "mango")
-my_fruits.insert(0, "melon")
-print(my_fruits)
+#my_fruits.insert(0, "mango")
+#my_fruits.insert(0, "melon")
+#print(my_fruits)
 
 # extend (with a list)
 
-my_fruits.extend(["grapes", "cherry"])
-print(my_fruits)
+#my_fruits.extend(["grapes", "cherry"])
+#print(my_fruits)
 
 # Finding index position
 
-print(my_fruits.index("mango"))
+#print(my_fruits.index("mango"))
 
 # reversing a list
 
-my_fruits.reverse()
-print(my_fruits)
+#my_fruits.reverse()
+#print(my_fruits)
 
 # sorting 
 
-my_fruits.sort()
-print(my_fruits)
+#my_fruits.sort()
+#print(my_fruits)
 
-my_fruits.sort(key=len)
-print(my_fruits)
+#my_fruits.sort(key=len)
+#print(my_fruits)
 
 # join
 
-x = ", ".join(my_fruits)
-print(x)
+#x = ", ".join(my_fruits)
+#print(x)
 
 # Dictionaries {} key:values pairs
 # similar to a list, no indexing. 
 # Keys have to have unique values dont. 
 
-drinks = {"fizzy": "sprite", "still": "water", "juice": "orange", "alcohlic": "wine"}
-print(drinks)
-print(drinks["still"]) # cant query values only keys 
+#drinks = {"fizzy": "sprite", "still": "water", "juice": "orange", "alcohlic": "wine"}
+#print(drinks)
+#print(drinks["still"]) # cant query values only keys 
 
 # adding to a dictionary
 
-drinks["non-alcohlic"] = "water"
-print(drinks)
+#drinks["non-alcohlic"] = "water"
+#print(drinks)
 
 # Overwrite 
 
-drinks["non-alcohlic"] = "squash"
-print(drinks)
+#drinks["non-alcohlic"] = "squash"
+#print(drinks)
 
 # return all values or keys or both
 
-print(drinks.values())
-print(drinks.keys())
-print(drinks.items())
+#print(drinks.values())
+#print(drinks.keys())
+#print(drinks.items())
 
-print("water" in drinks.values())
-print("still" in drinks)
+#print("water" in drinks.values())
+#print("still" in drinks)
 
 # get method
 
-print(drinks.get("still"))
-print(drinks.get("stille", "not found"))
-print(drinks.get("stillie"))
+#print(drinks.get("still"))
+#print(drinks.get("stille", "not found"))
+#print(drinks.get("stillie"))
 
 # update
 
-drinks.update({"sugary": "cola"})
+#drinks.update({"sugary": "cola"})
 #or
-drinks.update(very_sugary = "red bull")
-print(drinks)
+#drinks.update(very_sugary = "red bull")
+#print(drinks)
 
 # Pop
 
-print(drinks.pop("non-alcohlic"))
-print(drinks.pop("non-alcohlic", "not-found"))
-print(drinks)
+#print(drinks.pop("non-alcohlic"))
+#print(drinks.pop("non-alcohlic", "not-found"))
+#print(drinks)
 
 # exercise:
 
-books = {"the handmaiden's tale": ["atwood", "something else"], "the hobbit": "tolkien"}
+#books = {"the handmaiden's tale": ["atwood", "something else"], "the hobbit": "tolkien"}
 
-print(books["the handmaiden's tale"])
+#print(books["the handmaiden's tale"])
 
 # make a dictionary of books, with 3 authors and multiple books per author. 
 # use an input() asking for an author name. 
 # print back as a string the list of books by that author.
 # Use the .join() method.
 
-books_dict = {"author1": ["book1", "book2"], "Author2": ["book3", "book4"]}
+#books_dict = {"author1": ["book1", "book2"], "Author2": ["book3", "book4"]}
 
-y = input("enter author name: ")
+#y = input("enter author name: ")
 
-print(", ".join(books_dict[y]))
+#print(", ".join(books_dict[y]))s
+
+# Tuples 
+# We cant update in a tuple
+# () instead [] or nothing at all
+
+shapes = ("sqaure", "cirlce", "triangle")
+shapes1 = "sqaure", "cirlce", "triangle"
+
+print(type(shapes))
+print(type(shapes1))
+
+# less memory- very slight
+# speed - a little a bit quicker.
+# indicates that we dont want to change the data. 
+
+# Sets
+# no indexing
+# no duplicate values
+# {}
+
+items = {"apple", "banana", "pear"}
+
+print(type(items))
+
+
+
 
 
 
