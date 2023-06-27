@@ -24,3 +24,4 @@ elif largest % 2 != 0 and largest % 3 == 0:
     print("Odd Number and a Multiple of 3")
 else:
     print("Odd Number")
+
