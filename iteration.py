@@ -145,6 +145,11 @@ for i in range(1,3):
 
 # counter + while loop, inside while loop have a input, a print and a +=1
 
+counter = 0
 
+while counter < 5:
+    name = input("enter your name: ")
+    print(name + " is great!")
+    counter += 1 
 
 
