@@ -64,3 +64,53 @@ else:
 # if between 65 and 85 print "pass"
 # anything else print "fail"
 # if + elif + else 
+
+#x = int(input("enter a grade: "))
+
+#if x >= 85:
+#    print("distinction")
+#elif x >= 65:
+#    print("pass")
+#else:
+#    print("fail")
+
+# Multiple compareters = with multiple conditions using and/or:
+
+deposit = 0
+password = "password"
+
+#if 0 < deposit <= 100 and password == "password":
+#    print(f"thank you for £{deposit}")
+#else:
+#    print("failed to deposit")
+
+#if not (0 < deposit <=100) or password != "password":
+#    print("failed to deposit")
+#else:
+#    print("thank you for the deposit")
+
+# in and not in:
+
+name = "root"
+
+#if name in ("root", "admin", "password"):
+#    print("invalid password!")
+#else:
+#    print("accepted")
+
+if name not in ("root", "admin"):
+    print("accepted")
+else: 
+    print("invalid password")
+
+
+# challenge:
+# weight converter app: convert a user inputted weight(float), and user
+# to select either kgs and lbs. write an if statemnet that checks 
+# if the unit is kgs or lbs, if kgs convert into lbs and print the converted value.
+# else: to handle the other way around. Error handling for upper/lower case. 
+
+
+
+
+
