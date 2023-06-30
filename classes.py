@@ -97,9 +97,138 @@ print(student_7.age)
 student_7.change_age()
 print(student_7.age)
 
+# Self-class variables
+
+class Students4:
+
+    age_increase_amount = 25 # self class variable
+
+    def __init__(self, first, last, age):
+        self.first = first
+        self.last = last      
+        self.age = age
+
+    def fullname(self):
+        return(self.first + " " + self.last)
+
+    def change_age(self):
+        self.age = int(self.age + self.age_increase_amount)
+
+student_8 = Students4("john", "smith", 10)
+student_9 = Students4("katie", "smith", 12)
+student_8.change_age()
+print(student_8.age)
+print(student_8.age_increase_amount)
+print(Students4.age_increase_amount)
+
+# __dict__
+
+print(Students4.__dict__)
+print(student_8.__dict__)
+print(student_9.__dict__)
+
+# Change the variable
+
+Students4.age_increase_amount = 20
+student_9.age_increase_amount = 15
+student_8.change_age()
+student_9.change_age()
+print(Students4.__dict__)
+print(student_8.__dict__)
+print(student_9.__dict__)
+
+# Non self class variable
+
+class Students5:
+
+    age_increase_amount = 25 # self class variable
+    num_of_students = 0
+
+    def __init__(self, first, last, age):
+        self.first = first
+        self.last = last      
+        self.age = age
+
+        Students5.num_of_students += 1
+
+    def fullname(self):
+        return(self.first + " " + self.last)
+
+    def change_age(self):
+        self.age = int(self.age + self.age_increase_amount)
+
+student_10 = Students5("j", "s", 10)
+print(Students5.num_of_students)
+student_11 = Students5("k", "s", 12)
+print(Students5.num_of_students)
+
+# Parent class
+
+class Animal:
+    def __init__(self, name, species):
+        self.name = name
+        self.species = species
+
+    def eat(self):
+        print(f"{self.name} is eating")
+
+# Child class
+
+class Cat(Animal):
+    def __init__(self, name, species, breed):
+        super().__init__(name, species)
+        self.breed = breed
+
+    def meow(self):
+        print("meow")
+
+my_cat = Cat("w", "f", "s")
+
+my_cat.meow()
+my_cat.eat()
+
+print(my_cat)
+
+# __str__ method
+# Parent class
+
+class Animal1:
+    def __init__(self, name, species):
+        self.name = name
+        self.species = species
+
+    def eat(self):
+        print(f"{self.name} is eating")
+
+    def __str__(self):
+        return f"{self.name} ({self.species})"
+
+# Child class
+
+class Cat1(Animal1):
+    def __init__(self, name, species, breed):
+        super().__init__(name, species)
+        self.breed = breed
+
+    def meow(self):
+        print("meow")
+
+    def __str__(self):
+        return f"{self.name} ({self.species}, {self.breed})"
+    
+my_cat1 = Cat1("w", "f", "s")
 
 
+print(my_cat1)
 
+# __ attribute is only accessible by when calling witht the class name. 
+# access by _Classname__attributeName 
+# trailing_ its way of using python keywords. class_ input_ 
+# _leading underscore - indicates an attribute is private. 
 
+class Feline:
+    __family = "something"
 
+cat3 = Feline()
 
+print(cat3._Feline__family)
