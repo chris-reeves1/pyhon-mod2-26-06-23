@@ -112,14 +112,56 @@ file.close()
 # edit the the teams.txt file so that the top line is replaced with "new line"
 # print out the edited file line by line. 
 
+file = open("teams.txt", "w")
+sports_teams = ["man utd", "man city", "barcelona", "real madrid", "Charlton"]
 
+for i in sports_teams:
+    newline = i + "\n"
+    file.write(newline)
+file.close()
 
+file = open("teams.txt", "r")
 
+lines = file.readlines()
 
+file.close()
 
+#print(lines)
+#print(lines[0])
+#print(lines[3])
+print(lines[0].strip()) # removes the whitespace and also remove \n
+print(lines[3].strip())
 
+file = open("teams.txt", "r")
 
+lines = file.readlines()
+file.close()
 
+lines[0] = "this is a new line"
+
+file = open("teams.txt", "w")
+
+for i in range(len(lines)):
+    if i == len(lines):
+        file.write(lines[i]) # checks if last line and no new line char
+    else:
+        file.write(lines[i].strip() + "\n")
+file.close()
+
+file = open("teams.txt", "r")
+
+for line in file:
+    print(line.strip())
+file.close()
+
+# with statement
+
+with open("filename.txt", "w") as file: #aliasing
+    for n in range(1,11):
+        newline = "this is line" + " " + str(n) + "\n"
+        file.write(newline)
+
+# we dont have to close the file!! 
 
 
 
