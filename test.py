@@ -1,53 +1,29 @@
-import csv 
-companies = []
-sales = []
+import statistics
+
+data = "100,30,53,67,85,87,50,45,51,72,64,69,59,17,22,23,44,25,16,67,85,87,50,45,51,72,59,14,50,55,32,23,24,25,37,28,39,30,33,35,40,34,41,43,94,95,59,98,99,44,45,47,48,49,53,61,63,69,75,77,60,83"
+
+grades = [int(x) for x in data.split(',')]
+
+min_grades = min(grades)
+max_grades = max(grades)
+print(min_grades, max_grades)
+
+average_grade = sum(grades) / len(grades)
+average_grade = round(average_grade, 2)
+
+print(average_grade)
+
+mean_grade = round(statistics.mean(grades), 2)
+
+print(mean_grade)
+
+median_grade = statistics.median(grades)
+
+print(median_grade)
+
+output = "minumum grade: {}\nMaximum grade: {}\nMean grade: {}\nMedian grade: {}"
+
+print(output.format(min_grades,max_grades,mean_grade, median_grade))
+print("min grade: {}".format(min_grades))
 
 
-with open('output.csv') as file:
-    readFile = csv.reader(file) 
-    file.readline() # reads and moves to next line
-    for i in readFile:
-        companies.append(str(i[0]))
-        # print(i[0])
-        sales.append([int(y.replace(",", "")) for y in i[1:]])
-print(companies)
-print(sales)
-
-jan = []
-feb = []
-mar = []
-apr = []
-may = []
-june = []
-july = []
-aug = []
-
-for i in sales:
-    # print(i[0])
-    jan.append(int(i[0]))
-    feb.append(int(i[1]))
-    mar.append(int(i[2]))
-    apr.append(int(i[3]))
-    may.append(int(i[4]))
-    june.append(int(i[5]))
-    july.append(int(i[6]))
-    aug.append(int(i[7]))
-print(f"January 2019 total sales: £{sum(jan)}")
-print(f"Febuary 2019 total sales: £{sum(feb)}")
-print(f"March 2019 total sales: £{sum(mar)}")
-print(f"April 2019 total sales: £{sum(apr)}")
-print(f"May 2019 total sales: £{sum(may)}")
-print(f"June 2019 total sales: £{sum(june)}")
-print(f"July 2019 total sales: £{sum(july)}")
-print(f"August 2019 total sales: £{sum(aug)}")
-
-ford = sum(sales[0])
-volks = sum(sales[1])
-merc = sum(sales[2])
-vaux = sum(sales[3])
-bmw = sum(sales[4])
-print(f"Ford Motor Company total yearly sales: £{ford}")
-print(f"Volkswagen UK total yearly sales: £{volks}")
-print(f"Mercedes-Benz UK total yearly sales: £{merc}")
-print(f"Vauxhall Motors total yearly sales: £{vaux}")
-print(f"BMW  total yearly sales: £{bmw}")
