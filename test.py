@@ -1,29 +1,75 @@
-import statistics
+class Verify_Password:
+    def __init__(self, password):
+        self.password = password
+        self.password_strength = 0
+        
+    def checklength(self,password):
+        if len(password) > 6 and len(password) < 10 :
+            self.password_strength += 1
+        elif len(password) > 10:
+            self.password_strength += 1
+        else:
+            self.password_strength = 0
+    
+    def checkalpha(self,password):
+        if password.isalpha() == True:
+            self.password_strength += 1
+        elif password.isnumeric() == True:
+            self.password_strength += 1
+        elif password.isalnum() == True:
+            self.password_strength += 1
+        elif password.isascii() == True:
+            self.password_strength += 1
+        else:
+            self.password_strength += 0
+    
+    def checkcase(self,password):
+        if password.islower():
+            self.password_strength += 1
+        elif password.isupper():
+            self.password_strength += 1
+        #elif password.islower() and password.isupper():
+        #    self.password_strength += 1
+        else:
+            self.password_strength = 0
 
-data = "100,30,53,67,85,87,50,45,51,72,64,69,59,17,22,23,44,25,16,67,85,87,50,45,51,72,59,14,50,55,32,23,24,25,37,28,39,30,33,35,40,34,41,43,94,95,59,98,99,44,45,47,48,49,53,61,63,69,75,77,60,83"
+    def standardpasswords(self,password):
+        standardlist=["password","test","password1","password2","tester",1234567,"qwerty","@@@@@@"]
+        for passwords in standardlist:
+            if password == standardlist:
+                print (f"matched password is : {password}")
+                self.password_strength = 0
+        else:
+            self.password_strength +=1
+        
+    def rating(self,password_strength):
+        if self.password_strength < 1:
+            status = "Weak password"
+            return status
+        elif self.password_strength < 2:
+            status = "Medium password"
+            return status
+        elif self.password_strength < 3:
+            status = "Strong password"
+            return status
+        elif self.password_strength < 4:
+            status = "Very Strong password"
+            return status
 
-grades = [int(x) for x in data.split(',')]
-
-min_grades = min(grades)
-max_grades = max(grades)
-print(min_grades, max_grades)
-
-average_grade = sum(grades) / len(grades)
-average_grade = round(average_grade, 2)
-
-print(average_grade)
-
-mean_grade = round(statistics.mean(grades), 2)
-
-print(mean_grade)
-
-median_grade = statistics.median(grades)
-
-print(median_grade)
-
-output = "minumum grade: {}\nMaximum grade: {}\nMean grade: {}\nMedian grade: {}"
-
-print(output.format(min_grades,max_grades,mean_grade, median_grade))
-print("min grade: {}".format(min_grades))
-
-
+while True:
+    userpassword= input("Enter Password: ")
+    if len(userpassword) > 0:
+        check1=Verify_Password(userpassword)
+        check1.checklength(userpassword)
+        #print (f"Counter for checklength : {check1.password_strength}")
+        check1.checkalpha(userpassword)
+        #print (f"Counter for checkalpha : {check1.password_strength}")
+        check1.checkalpha(userpassword)
+        #print (f"Counter for checkcase : {check1.password_strength}")
+        check1.standardpasswords(userpassword)
+        #print (f"Counter for standardpasswords : {check1.password_strength}")
+        y = check1.rating(check1.password_strength)
+        print (f"Counter for standardpasswords :{check1.password_strength} so rating is : {y}")
+    else:
+        print("invalid Input")
+    break
