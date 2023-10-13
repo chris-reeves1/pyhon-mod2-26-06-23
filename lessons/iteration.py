@@ -152,4 +152,14 @@ while counter < 5:
     print(name + " is great!")
     counter += 1 
 
+for counter in range(5):
+    name = input("Enter your name: ")
+    print(name + " is great!")
+
+names = [input("What is your name? ") for name in range(5)]
+for name in names: print(f"{name} is awesome!")
+
+[print(f"{name} is awesome!") for name in [input("enter a name? ") for _ in range(5)]]
+
+
 
